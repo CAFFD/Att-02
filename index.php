@@ -7,6 +7,7 @@ $bd = new MySQLConnection(); //PDO('mysql:host=localhost;dbname=biblioteca', 'ro
 
 $comando = $bd->prepare('SELECT * FROM generos');
 $comando->execute();
+
 $generos = $comando->fetchALL(PDO::FETCH_ASSOC);
 
 ?>
@@ -23,12 +24,16 @@ $generos = $comando->fetchALL(PDO::FETCH_ASSOC);
             <tr>
                 <th>Id</th>
                 <th>Nome</th>
+                <th>&nbsp;</th>
             </tr>
             <?php foreach($generos as $g): ?>
-                <tr>
+            <tr>
                     <td><?= $g['id'] ?></td>
                     <td><?= $g['nome'] ?></td>
-                </tr>
+                    <td>
+                        <a href="update.php?id=<?= $g['id'] ?>">Editar</a>
+                    </td>
+            </tr>
             <?php endforeach ?>
         </table>
     </body>
