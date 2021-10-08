@@ -19,13 +19,19 @@ if($_SERVER['REQUEST_METHOD'] == 'Post') {
     <head>
         <meta charset="utf-8">
         <title>Novo Gênero</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Novo Gênero</h1>
-        <form action="insert.php" method="post">
-            <label for="nome">Nome do Gênero</label>
-            <input type="text" required name="nome" />
-            <button type="submit">Salvar</button>
-        </form>
+        <main class="container">
+            <h1>Novo Gênero</h1>
+            <form action="insert.php" method="post">
+                <div class="form-group">
+                    <label for="nome">Nome do Gênero</label>
+                    <input class="form-control" type="text" required name="nome" />
+                </div>
+                <br />
+                <button class="btn btn-success" type="submit">Salvar</button>
+            </form>
+        </main>
     </body>
 </html>

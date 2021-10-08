@@ -17,25 +17,28 @@ $generos = $comando->fetchALL(PDO::FETCH_ASSOC);
     <head>
         <meta charset="utf-8">
         <title>Biblioteca</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     </head>
     <body>
-        <a href="insert.php">Novo Gênero</a>
-        <table>
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>&nbsp;</th>
-            </tr>
-            <?php foreach($generos as $g): ?>
-            <tr>
-                    <td><?= $g['id'] ?></td>
-                    <td><?= $g['nome'] ?></td>
-                    <td>
-                        <a href="update.php?id=<?= $g['id'] ?>">Editar</a>
-                        <a href="delete.php?id=<?= $g['id'] ?>">Excluir</a>
-                    </td>
-            </tr>
-            <?php endforeach ?>
-        </table>
+        <main class="container">
+            <a class="btn btn-primary" href="insert.php">Novo Gênero</a>
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <?php foreach($generos as $g): ?>
+                <tr>
+                        <td><?= $g['id'] ?></td>
+                        <td><?= $g['nome'] ?></td>
+                        <td>
+                            <a class="btn btn-secondary" href="update.php?id=<?= $g['id'] ?>">Editar</a>
+                            <a class="btn btn-danger" href="delete.php?id=<?= $g['id'] ?>">Excluir</a>
+                        </td>
+                </tr>
+                <?php endforeach ?>
+            </table>
+        </main>
     </body>
 </html>
